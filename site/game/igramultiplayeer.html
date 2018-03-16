@@ -1,0 +1,42 @@
+<meta charset="utf-8">
+<script>
+	var answer = parseInt(Math.random() * 100);
+
+ while (true) {
+ 	var userAnswer = prompt("Игрок №1 введите число от 0 до 100 , для выхода нажмите q.");
+ 	var userAnswer1 = prompt("Игрок №2 введите число от 0 до 100 , для выхода нажмите q.");
+
+ 	if(userAnswer == "q" || userAnswer1 == "q") {
+ 		break;
+ 	}
+
+ 	userAnswer = parseInt(userAnswer);
+ 	userAnswer1 = parseInt(userAnswer1);
+
+ 	if(userAnswer > answer) {
+ 		alert("Игрок №1 Ваш ответ слишком большой.");
+ 		
+ 	}if(userAnswer1 > answer){
+ 		alert("Игрок №2 Ваш ответ слишком большой.");
+
+
+ 	} if(userAnswer < answer){
+ 		alert("Игрок №1 Ваш ответ слишком маленький");
+ 		
+ 	
+ 	} if(userAnswer1 < answer){
+ 		alert("Игрок №2 Ваш ответ слишком маленький");
+ 		
+ 	
+ 	}if(userAnswer == answer){
+ 		alert("Игрок №1 вы угадали!!!");
+
+ 		break;
+ 		
+ 		
+ 	}if(userAnswer1 == answer){
+ 		alert("Игрок №2 вы угадали");
+ 		break;
+ 	}
+}
+</script>	
