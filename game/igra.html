@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Документ без названия</title>
+<style>
+.wrapperBlock{border:solid 2px #CCCCCC;padding:3px 7px;width:450px;}
+.wrapperBlock *{display:inline-block;vertical-align:center;}
+</style>
+<script>
+function getRandomInt(min, max){return Math.floor(Math.random() * (max - min + 1)) + min;}
+var randomString = ["bara","clinkz","sniper","void","venga"];
+var nowString = randomString[getRandomInt(0,randomString.length-1)],blockNowString,ch=0,secredString="";
+window.addEventListener("load",function(){
+    blockNowString = document.getElementById("nowString");
+    for(var i=0; i<nowString.length; i++) secredString+="*";
+    blockNowString.innerHTML = secredString;
+});
+function info(){
+    var val = document.getElementById("myText").value;
+    document.getElementById("myText").value = "";
+    if(val.length>1||val==""||val==" ") return alert("Вы должны ввести 1 символ!");
+    secredString = secredString.split(""); ch++;
+    for(var i=0;i<nowString.length; i++) if(nowString[i]==val) secredString[i]=val;
+    secredString = secredString.join("");
+    blockNowString.innerHTML = secredString;
+    if(secredString==nowString) document.getElementById("ch").innerHTML = "колличество попыток = "+ch;
+}
+</script>
+</head>
+<body>
+<div class="wrapperBlock">
+    <div id="nowString"></div>
+    <input id="myText" type="text">
+    <input type="button" value="угадать символ" onClick="info()">
+    <div id="ch"></div>
+</div>
+<div>возможные слова ["bara","clinkz","sniper","void","venga"]</div>
+</body>
+</html>
